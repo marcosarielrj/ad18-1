@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <title>Soma NodeJS</title>
+
+    
+    <script>
+      
+      function calcularimc() {
+      
+    	  $.ajax({
+            dataType: "json",
+            url: "../calcularimc?peso=" + document.forms["calcimc"].elements["peso"].value.replace(",",".") + "&" + "altura=" + document.forms["calcimc"].elements["altura"].value.replace(",",".")
+          }).then(function (data) {
+        	  
+            $('#resultado').html(data.imc + " em (" + data.dataDeProcessamento + ")");
+            $("input#peso").val("");
+            $("input#altura").val("");
+          });
+        }
+    </script>
+  </head>
+
+  <body>
+              <form name="Soma" id="soma">
+
+                    <input type="text" placeholder="Num 1" id="num1">
+                    
+                  <br>
+    
+                    <input type="text" placeholder="Num 2" id="num2">
+ 
+                  <br>
+
+                    <button type="submit"  id="calcular" onclick="calcularimc() ; return false">Calcular</button>
+
+                    <h2  id="resultado" style ="font-size: 1.5em">Resultado : </h2>
+
+              </form>
+
+  </body>
+
+  </html>
