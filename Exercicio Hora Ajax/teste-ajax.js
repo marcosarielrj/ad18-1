@@ -21,8 +21,7 @@ app.get('/ola', function (req, res) {
   var hms = h+":"+m+":"+s;
   res.type('json');
   res.send({"hora": hms});
-       //res.end( '{ "msg": "ola!" }' );
-   //});
+  
 })
 
 

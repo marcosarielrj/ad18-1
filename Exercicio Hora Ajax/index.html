@@ -1,0 +1,22 @@
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function atualizahora(){
+	$.get("/ola", function(data, status){
+		$("#txt").html(JSON.stringify(data));
+		var t = setTimeout(function(){atualizahora()},500);
+	})	
+});
+
+
+</script>
+
+</head>
+<body onload="atualizahora()">
+<div id="txt"></div>
+</body>
+</html>

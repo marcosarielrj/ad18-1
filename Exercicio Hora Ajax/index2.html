@@ -1,16 +1,8 @@
 <html>
 <head>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 <script>
-
-$(document).ready(function atualizahora(){
-	$.get("/ola", function(data, status){
-		$("#txt").html(status);})
-});
-	
-/*function atualizahora() {
+function atualizahora() {
 // This is the client-side script.
 
 // Initialize the HTTP request.
@@ -19,7 +11,8 @@ xhr.open('GET', '/ola');
 
 // Track the state changes of the request.
 xhr.onreadystatechange = function () {
-	 // status 200 is a successful return.
+	var DONE = 4; // readyState 4 means the request is done.
+	var OK = 200; // status 200 is a successful return.
 	if (xhr.readyState === DONE) {
 		if (xhr.status === OK) {
 			// alert(xhr.responseText); // 'This is the output.'
@@ -29,12 +22,13 @@ xhr.onreadystatechange = function () {
 			document.getElementById("txt").innerHTML = xhr.status;
 		}
 	}
-};*/
+};
 
 // Send the request to send-ajax-data.php
-//xhr.send(null);
-  //  var t = setTimeout(function(){ atualizahora() }, 500);
+xhr.send(null);
+    var t = setTimeout(function(){ atualizahora() }, 500);
 
+}
 </script>
 
 </head>
