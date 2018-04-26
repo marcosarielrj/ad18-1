@@ -5,20 +5,28 @@ var app = express();
 var fs = require("fs");
 
 app.get('/', function (req, res) {
-   fs.readFile( __dirname + "/" + "index.html", 'utf8', function (err, data) {
+   fs.readFile( __dirname + "/" + "index3.html", 'utf8', function (err, data) {
        // console.log( data );
        res.end( data );
    });
 })
 
-app.get('/ola', function (req, res) {
+app.get('/soma', function (req, res) {
   //fs.readFile( __dirname + "/" + "index.html", 'utf8', function (err, data) {
-   //    console.log( data );
-  var d = new Date();
-  var h = d.getHours();
-  var m = d.getMinutes();
-  var s = d.getSeconds();
-  var hms = h+":"+m+":"+s;
+     //console.log( data );
+    if (req.method === "GET"){
+
+      var x = toString(req.x);
+      var y = toString(req.y);
+      console.log(x);
+      console.log(y);
+
+    }
+  var soma;
+  
+  //
+  
+  
   res.type('json');
   res.send({"hora": hms});
   

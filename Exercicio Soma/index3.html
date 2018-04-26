@@ -13,7 +13,7 @@
     
     <script>
       
-      function calcularimc() {
+      /*function calcularimc() {
       
     	  $.ajax({
             dataType: "json",
@@ -24,26 +24,20 @@
             $("input#peso").val("");
             $("input#altura").val("");
           });
-        }
+        }*/
     </script>
   </head>
 
   <body>
-              <form name="Soma" id="soma">
-
-                    <input type="text" placeholder="Num 1" id="num1">
-                    
-                  <br>
-    
-                    <input type="text" placeholder="Num 2" id="num2">
- 
-                  <br>
-
-                    <button type="submit"  id="calcular" onclick="calcularimc() ; return false">Calcular</button>
-
-                    <h2  id="resultado" style ="font-size: 1.5em">Resultado : </h2>
-
-              </form>
+      <form action="/soma">
+        Numero 1:<br>
+        <input type="text" name="x" value="">
+        <br>
+        Numero 2:<br>
+        <input type="text" name="y" value="">
+        <br><br>
+        <input type="submit" value="Soma">
+      </form> 
 
   </body>
 
