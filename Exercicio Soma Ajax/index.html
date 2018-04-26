@@ -1,0 +1,33 @@
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function somar(){
+	$.get("/soma" + "?x=" + $("#xis").val + "&y=" + $("#yps").val, function(data, status){
+
+	    
+		$("#resultado").html(JSON.stringify(data));
+
+	})	
+}); 
+
+</script>
+
+</head>
+<body>
+
+		<form id="formsoma">
+			Numero 1:<br>
+			<input type="text" id="xis">
+			<br>
+			Numero 2:<br>
+			<input onfocus="somar()" type="text" id="yps">
+			<br><br>
+		  </form> 
+
+<h2 id="resultado">Resultado:</h2>
+</body>
+</html>

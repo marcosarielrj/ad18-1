@@ -1,22 +1,28 @@
-<html>
-<head>
+<!DOCTYPE html>
+<html lang="en">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <head>
 
-<script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-$(document).ready(function atualizahora(){
-	$.get("/ola", function(data, status){
-		$("#txt").html(JSON.stringify(data));
-		var t = setTimeout(function(){atualizahora()},500);
-	})	
-});
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <title>Soma NodeJS</title>
 
-</script>
+  </head>
 
-</head>
-<body onload="atualizahora()">
-<div id="txt"></div>
-</body>
-</html>
+  <body>
+      <form action="/soma">
+        Numero 1:<br>
+        <input type="text" name="x" value="">
+        <br>
+        Numero 2:<br>
+        <input type="text" name="y" value="">
+        <br><br>
+        <input type="submit" value="Soma">
+      </form> 
+
+  </body>
+
+  </html>

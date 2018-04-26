@@ -5,7 +5,7 @@ var app = express();
 var fs = require("fs");
 
 app.get('/', function (req, res) {
-   fs.readFile( __dirname + "/" + "index3.html", 'utf8', function (err, data) {
+   fs.readFile( __dirname + "/" + "index.html", 'utf8', function (err, data) {
        // console.log( data );
        res.end( data );
    });
@@ -14,21 +14,18 @@ app.get('/', function (req, res) {
 app.get('/soma', function (req, res) {
   //fs.readFile( __dirname + "/" + "index.html", 'utf8', function (err, data) {
      //console.log( data );
-    if (req.method === "GET"){
 
-      var x = toString(req.x);
-      var y = toString(req.y);
+      var urlsub = (req.url).split("=");
+      var x = parseInt(urlsub[1].match(/\d/g).join(''));
+      var y = parseInt(urlsub[2].match(/\d/g).join(''));
+      var soma = x + y;
       console.log(x);
       console.log(y);
-
-    }
-  var soma;
+      var resultado = "Resultado: " + soma;
   
   //
   
-  
-  res.type('json');
-  res.send({"hora": hms});
+  res.send(resultado);
   
 })
 
