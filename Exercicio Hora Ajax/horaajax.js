@@ -5,14 +5,14 @@ var app = express();
 var fs = require("fs");
 
 app.get('/', function (req, res) {
-   fs.readFile( __dirname + "/" + "index.html", 'utf8', function (err, data) {
+   fs.readFile( __dirname + "/" + "indexajax.html", 'utf8', function (err, data) {
        // console.log( data );
        res.end( data );
    });
 })
 
 app.get('/ola', function (req, res) {
-  //fs.readFile( __dirname + "/" + "index.html", 'utf8', function (err, data) {
+  //fs.readFile( __dirname + "/" + "indexajax.html", 'utf8', function (err, data) {
    //    console.log( data );
   var d = new Date();
   var h = d.getHours();

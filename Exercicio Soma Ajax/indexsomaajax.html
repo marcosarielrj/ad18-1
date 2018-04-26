@@ -1,0 +1,41 @@
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+/*
+$(document).ready(function somar(){
+	$.get("/soma" + "?x=" + document.forms["formsoma"].elements["x"].value + "&y=" + document.forms["formsoma"].elements["y"].value, function(data){
+		$("#resultado").html(JSON.stringify(data));
+
+	})	
+});*/
+
+function somar(){
+
+	$.get("/soma" + "?x=" + document.forms["formsoma"].elements["x"].value + "&y=" + document.forms["formsoma"].elements["y"].value, function(data){
+		$("#resultado").html(JSON.stringify(data));
+
+	})	
+} 
+
+
+</script>
+
+</head>
+<body>
+
+		<form id="formsoma">
+			Numero 1:<br>
+			<input type="text" id="x">
+			<br>
+			Numero 2:<br>
+			<input type="text" id="y" onblur="somar()">
+
+			<br><br>
+		  </form> 
+
+<h2 id="resultado">Resultado:</h2>
+</body>
+</html>

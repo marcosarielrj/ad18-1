@@ -1,11 +1,11 @@
-var express = require('express');
+﻿var express = require('express');
 var app = express();
 //var bodyParser = require('body-parser');
 //app.use(bodyParser.json()); // for parsing application/json
 var fs = require("fs");
 
 app.get('/', function (req, res) {
-   fs.readFile( __dirname + "/" + "index.html", 'utf8', function (err, data) {
+   fs.readFile( __dirname + "/" + "indexsomaajax.html", 'utf8', function (err, data) {
        // console.log( data );
        res.end( data );
    });
@@ -14,18 +14,23 @@ app.get('/', function (req, res) {
 app.get('/soma', function (req, res) {
   //fs.readFile( __dirname + "/" + "index.html", 'utf8', function (err, data) {
      //console.log( data );
+      
+     try{
 
-     console.log(req.url); 
      var urlsub = (req.url).split("=");
-      var x = parseInt(urlsub[1].match(/\d/g).join(''));
-      var y = parseInt(urlsub[2].match(/\d/g).join(''));
-      var soma = x + y;
-      var resultado = "Resultado: "+ soma;
+     var x = parseInt(urlsub[1].match(/\d/g).join(''));
+     var y = parseInt(urlsub[2].match(/\d/g).join(''));
+     var soma = x + y;
+     var resultado = "Resultado: "+ soma;
   
   //
   
-  res.send(resultado);
-  
+      res.send(resultado);
+     }catch(err){
+
+      res.send("Não pode ser vazio");
+
+     }
 })
 
 
