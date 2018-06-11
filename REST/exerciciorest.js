@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var fs = require("fs");
 
-/* var user = {
+var user = {
    "user4" : {
       "name" : "mohit",
       "password" : "password4",
@@ -11,7 +11,6 @@ var fs = require("fs");
       "id": 4
    }
 }
-*/
 
 app.use(bodyParser.json()); // for parsing application/json
 
@@ -26,9 +25,9 @@ app.put('/addUser', function (req, res) {
    // First read existing users.
    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
       data = JSON.parse( data );
-      // data["user4"] = JSON.parse(req.body);
+      data["user4"] = JSON.stringify(user);
       data["user4"] = req.body;
-      console.log( req.body );
+      console.log(data);
       // console.log( data );
       res.end( JSON.stringify(data));
    });

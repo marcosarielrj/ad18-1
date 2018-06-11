@@ -7,7 +7,8 @@
 
 $(document).ready(function atualizahora(){
 	$.get("/ola", function(data, status){
-		$("#txt").html(JSON.stringify(data));
+		$("#txt").html(data.hora);
+	
 		var t = setTimeout(function(){atualizahora()},500);
 	})	
 });
@@ -17,6 +18,7 @@ $(document).ready(function atualizahora(){
 
 </head>
 <body onload="atualizahora()">
-<div id="txt"></div>
+<div id="txt" onclick="">
+</div>
 </body>
 </html>
